@@ -1,5 +1,5 @@
 from django.shortcuts import render
-# from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Note
@@ -8,6 +8,9 @@ from .serializer import NoteSerializer
 from .utils import getNotesList, createNote, getSingleNote, updateNote, deleteNote
 
 # Create your views here.
+
+def home(request):
+    return HttpResponse('Home')
 
 @api_view(['GET'])
 def getRoutes(request):
